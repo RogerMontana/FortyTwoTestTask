@@ -12,8 +12,4 @@ urlpatterns = patterns('',
     url(r'^info_all/', show_info_all),
     url(r'^info/(?P<id>\d+)/$', show_info),
 
-
-
-
-
 )
