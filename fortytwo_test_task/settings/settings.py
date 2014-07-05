@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import sys
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -43,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.hello',
     'apps.statistic',
+    'settings_context_processor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,6 +59,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.FetchFromCacheMiddleware',
     'statistic.statistic.LoggingMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'fortytwo_test_task.urls'
 
@@ -130,4 +134,13 @@ TEMPLATE_DIRS = (
 
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'hello/fixtures')
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'settings_context_processor.context_processors.settings',
+)
+
+VISIBLE_SETTINGS = (
+    'INSTALLED_APPS',
+    'MIDDLEWARE_CLASSES',
 )

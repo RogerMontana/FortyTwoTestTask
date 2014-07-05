@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import sys
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -41,11 +42,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'settings_context_processor',
     'south',
     'apps.statistic',
     'apps.hello',
 
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'settings_context_processor.context_processors.settings',
 )
 
 MIDDLEWARE_CLASSES = (

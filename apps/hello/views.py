@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from apps.hello.models import Info
 from django.shortcuts import render_to_response
+from apps.settings_context_processor.context_processor import settings
+from django.template import RequestContext
+
 
 from django.contrib import messages
 
