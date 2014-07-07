@@ -1,5 +1,6 @@
 from django.conf import settings as django_settings
 from django.core.exceptions import ImproperlyConfigured
+from django.core.context_processors import request
 
 
 def settings(request):
@@ -11,7 +12,6 @@ the request context.
     for attr in getattr(django_settings, "TEMPLATE_VISIBLE_SETTINGS", ()):
         try:
             new_settings[attr] = getattr(django_settings, attr)
-            print(new_settings)
         except AttributeError:
             m = "TEMPLATE_VISIBLE_SETTINGS: '{0}' does not exist".format(attr)
             raise ImproperlyConfigured(m)

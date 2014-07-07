@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'settings_context_processor',
+    'context_processors',
     'south',
     'apps.statistic',
     'apps.hello',
@@ -50,7 +50,13 @@ INSTALLED_APPS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS += (
-    'settings_context_processor.context_processors.settings',
+    'context_processors.context_processor.settings',
+)
+TEMPLATE_VISIBLE_SETTINGS = (
+    'INSTALLED_APPS',
+    'MIDDLEWARE_CLASSES',
+    'ROOT_URLCONF',
+
 )
 
 MIDDLEWARE_CLASSES = (

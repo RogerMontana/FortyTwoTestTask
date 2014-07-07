@@ -44,7 +44,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.hello',
     'apps.statistic',
-    'settings_context_processor',
+    'context_processors',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+
+    'context_processors.context_processor.settings',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -136,11 +141,25 @@ FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'hello/fixtures')
 )
 
-TEMPLATE_CONTEXT_PROCESSORS += (
-    'settings_context_processor.context_processors.settings',
-)
+TEST = '(555) 555-5555'
 
-VISIBLE_SETTINGS = (
+TEMPLATE_VISIBLE_SETTINGS = (
+    'PROJECT_DIR',
+    'BASE_DIR ',
+    'DEBUG',
     'INSTALLED_APPS',
     'MIDDLEWARE_CLASSES',
+    'LANGUAGE_CODE',
+    'TIME_ZONE',
+    'USE_I18N',
+    'USE_L10N',
+    'USE_TZ',
+    'STATIC_ROOT',
+    'WSGI_APPLICATION',
+    'FIXTURE_DIRS',
+    'ROOT_URLCONF',
+    'WSGI_APPLICATION',
+    'DATABASES',
 )
+
+

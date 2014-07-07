@@ -1,14 +1,21 @@
 <!DOCTYPE html>
+<html>
+<body>
 <ul class="settings">
-    <li>{{ PROJECT_DIR }}</li>
-    <li>{{ BASE_DIR }}</li>
-    <li>{{ DEBUG }}</li>
-    <li>{{ TEMPLATE_DEBUG }}</li>
-    <li>{{ INSTALLED_APPS }}</li>
-    <li>{{ MIDDLEWARE_CLASSES }}</li>
-    <li>{{ FIXTURE_DIRS }}</li>
-    <li>{{ ROOT_URLCONF }}</li>
-    <li>{{ WSGI_APPLICATION }}</li>
-    <li>{{ DATABASES }}</li>
-    <li>{{ LANGUAGE_CODE }}</li>
+    <li>'PROJECT_DIR', {{ PROJECT_DIR }}</li>
+    <li>'BASE_DIR ', {{ BASE_DIR }}</li>
+    <li>'INSTALLED_APPS',{{ INSTALLED_APPS }}</li>
+    <li>'TEMPLATE_DEBUG', {{ TEMPLATE_DEBUG }}</li>
+    <li>'MIDDLEWARE_CLASSES',{{ MIDDLEWARE_CLASSES }}</li>
+    <li>'FIXTURE_DIRS', {{ FIXTURE_DIRS }}</li>
+    <li>'ROOT_URLCONF', {{ ROOT_URLCONF }}</li>
+    <li>'WSGI_APPLICATION', {{ WSGI_APPLICATION }}</li>
+    <li>'LANGUAGE_CODE', {{ LANGUAGE_CODE }}</li>
 </ul>
+</body>
+</html>
+
+
+
+
+
