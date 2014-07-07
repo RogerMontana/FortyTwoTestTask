@@ -1,34 +1,23 @@
+{% extends 'main.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-    <title>InfoPage</title>
-
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
-
-</head>
-<body>
-<div>
-
-
+{% block information %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.css' %}">
+<div class="row">
+  <div class="small-2 large-6 columns">
         {% for info in allinfo %}
-	  	<div align="left" id="layer1">
             <h4>User</h4>
             <p>First name: {{ info.info_firstname }}</p>
 			<p>Last name: {{ info.info_lastname }}</p>
             <p>Birth date: {{ info.info_birth }}</p>
-			<div id="text"><p>Bio: {{ info.info_bio }}</p></div>
+			<p>Bio: {{ info.info_bio }}</p>
         </div>
-             <div align="left" id="layer2">
+  <div class="small-2 large-6 columns">
             <h4>Contacts</h4>
 			<p>E-mail: {{ info.info_email }}</p>
 			<p>Jabber: {{ info.info_jabber }}</p>
             <p>Skype: {{ info.info_skype  }}</p>
-            <div id="text"><p>Other: {{ info.info_other }}</p></div>
-            </div>
+            <p>Other: {{ info.info_other }}</p>
+  </div>
         {% endfor %}
 </div>
-</body>
-</html>
-
+{% endblock %}

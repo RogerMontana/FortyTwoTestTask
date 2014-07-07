@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>42-test-karp</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.css' %}">
+
+</head>
+<body>
+
+
+<nav class="top-bar">
+	<section class="top-bar-section">
+		<ul class="right">
+			{% if username %}
+				<li><a href="/auth/logout/">Logout ({{ username }})</a></li>
+			{% else %}
+				<li><a href="/auth/login/">Login</a></li>
+			{% endif%}
+		</ul>
+
+
+        <ul class="left">
+            <li class="divider"></li>
+            <li class="active"><a href="/task/info/1/">Show Info</a></li>
+            <li class="divider"></li>
+         </ul>
+
+        <ul class="left">
+            <li class="divider"></li>
+            <li class="active"><a href="/task/info_all/">Show All</a></li>
+            <li class="divider"></li>
+        </ul>
+
+        <ul class="left">
+            <li class="divider"></li>
+            <li class="active"><a href="/task/settings/">Settings</a></li>
+            <li class="divider"></li>
+        </ul>
+
+	</section>
+</nav>
+
+<div class="row">
+         {% block information %} {% endblock %}
+         {% block settings %} {% endblock %}
+         {% block login %} {% endblock %}
+</div>
+
+</body>
+</html>

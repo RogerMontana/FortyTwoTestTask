@@ -11,6 +11,9 @@ from django.contrib import messages
 
 
 # Create your views here.
+def main(requset):
+    return render_to_response('main.html')
+
 def show_info_all(request, id=1):
     allinfo = Info.objects.all()
     db = Info._meta.fields

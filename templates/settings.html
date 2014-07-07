@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html>
-<body>
-<ul class="settings">
-    <li>'PROJECT_DIR', {{ PROJECT_DIR }}</li>
-    <li>'BASE_DIR ', {{ BASE_DIR }}</li>
-    <li>'INSTALLED_APPS',{{ INSTALLED_APPS }}</li>
-    <li>'TEMPLATE_DEBUG', {{ TEMPLATE_DEBUG }}</li>
-    <li>'MIDDLEWARE_CLASSES',{{ MIDDLEWARE_CLASSES }}</li>
-    <li>'FIXTURE_DIRS', {{ FIXTURE_DIRS }}</li>
-    <li>'ROOT_URLCONF', {{ ROOT_URLCONF }}</li>
-    <li>'WSGI_APPLICATION', {{ WSGI_APPLICATION }}</li>
-    <li>'LANGUAGE_CODE', {{ LANGUAGE_CODE }}</li>
-</ul>
-</body>
-</html>
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block settings %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.css' %}">
+<div class="row">
+  <div class="small-2 large-6 columns">
+          <p>'PROJECT_DIR', {{ PROJECT_DIR }}</p>
+          <p>'BASE_DIR ', {{ BASE_DIR }}</p>
+          <p>'INSTALLED_APPS',{{ INSTALLED_APPS }}</p>
+          <p>'TEMPLATE_DEBUG', {{ TEMPLATE_DEBUG }}</p>
+          <p>'MIDDLEWARE_CLASSES',{{ MIDDLEWARE_CLASSES }}</p>
+          <p>'FIXTURE_DIRS', {{ FIXTURE_DIRS }}</p>
+          <p>'ROOT_URLCONF', {{ ROOT_URLCONF }}</p>
+          <p>'WSGI_APPLICATION', {{ WSGI_APPLICATION }}</p>
+          <p>'LANGUAGE_CODE', {{ LANGUAGE_CODE }}</p>
+  </div>
+
+</div>
+{% endblock %}
+
+
+
 
 
 
